@@ -1,0 +1,1232 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Zero Trust - Sistem Nilai",
+  "dateExported": "2026-10-30T00:23:02.907Z",
+  "version": "1.2",
+  "_id": "zt-collection",
+  "folders": [
+    {
+      "_id": "zt-f1",
+      "name": "1. Auth",
+      "containerId": "",
+      "created": "2026-10-30T00:23:02.907Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "zt-f2",
+      "name": "2. Nilai",
+      "containerId": "",
+      "created": "2026-10-30T00:23:02.907Z",
+      "sortNum": 20000
+    },
+    {
+      "_id": "zt-f3",
+      "name": "3. Finalisasi",
+      "containerId": "",
+      "created": "2026-10-30T00:23:02.907Z",
+      "sortNum": 30000
+    },
+    {
+      "_id": "zt-f4",
+      "name": "4. Transkrip",
+      "containerId": "",
+      "created": "2026-10-30T00:23:02.907Z",
+      "sortNum": 40000
+    },
+    {
+      "_id": "zt-f5",
+      "name": "5. Sinkron (service-only)",
+      "containerId": "",
+      "created": "2026-10-30T00:23:02.907Z",
+      "sortNum": 50000
+    },
+    {
+      "_id": "zt-f6",
+      "name": "6. Bypass gateway (langsung ke service)",
+      "containerId": "",
+      "created": "2026-10-30T00:23:02.907Z",
+      "sortNum": 60000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "zt-r1",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Login mhs.andi",
+      "url": "http://127.0.0.1:3000/auth/login",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"mhs.andi\",\n  \"password\": \"Mhs#12345\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        },
+        {
+          "type": "set-env-var",
+          "custom": "json.data.access_token",
+          "action": "setto",
+          "value": "{{token_andi}}"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r2",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Login dosen.budi",
+      "url": "http://127.0.0.1:3000/auth/login",
+      "method": "POST",
+      "sortNum": 20000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"dosen.budi\",\n  \"password\": \"Dosen#123\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        },
+        {
+          "type": "set-env-var",
+          "custom": "json.data.access_token",
+          "action": "setto",
+          "value": "{{token_budi}}"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r3",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Login dosen.sari",
+      "url": "http://127.0.0.1:3000/auth/login",
+      "method": "POST",
+      "sortNum": 30000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-SARI"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"dosen.sari\",\n  \"password\": \"Dosen#123\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        },
+        {
+          "type": "set-env-var",
+          "custom": "json.data.access_token",
+          "action": "setto",
+          "value": "{{token_sari}}"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r4",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Login admin",
+      "url": "http://127.0.0.1:3000/auth/login",
+      "method": "POST",
+      "sortNum": 40000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-ADMIN-01"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Admin#123\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        },
+        {
+          "type": "set-env-var",
+          "custom": "json.data.access_token",
+          "action": "setto",
+          "value": "{{token_admin}}"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r5",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Login andi - password salah (401)",
+      "url": "http://127.0.0.1:3000/auth/login",
+      "method": "POST",
+      "sortNum": 50000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"mhs.andi\",\n  \"password\": \"salah\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "401"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r6",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Login andi - device tidak terdaftar (403)",
+      "url": "http://127.0.0.1:3000/auth/login",
+      "method": "POST",
+      "sortNum": 60000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "HP-ORANG-LAIN"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"mhs.andi\",\n  \"password\": \"Mhs#12345\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r7",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Login andi (simpan refresh token)",
+      "url": "http://127.0.0.1:3000/auth/login",
+      "method": "POST",
+      "sortNum": 70000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"mhs.andi\",\n  \"password\": \"Mhs#12345\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        },
+        {
+          "type": "set-env-var",
+          "custom": "json.data.refresh_token",
+          "action": "setto",
+          "value": "{{refresh_andi}}"
+        },
+        {
+          "type": "set-env-var",
+          "custom": "json.data.access_token",
+          "action": "setto",
+          "value": "{{token_andi}}"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r8",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Refresh (refresh_andi)",
+      "url": "http://127.0.0.1:3000/auth/refresh",
+      "method": "POST",
+      "sortNum": 80000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"refresh_token\": \"{{refresh_andi}}\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r9",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Logout (cabut refresh_andi)",
+      "url": "http://127.0.0.1:3000/auth/logout",
+      "method": "POST",
+      "sortNum": 90000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"refresh_token\": \"{{refresh_andi}}\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r10",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Refresh setelah logout (401)",
+      "url": "http://127.0.0.1:3000/auth/refresh",
+      "method": "POST",
+      "sortNum": 100000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"refresh_token\": \"{{refresh_andi}}\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "401"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r11",
+      "colId": "zt-collection",
+      "containerId": "zt-f1",
+      "name": "Token service (client id + secret)",
+      "url": "http://127.0.0.1:3000/auth/service",
+      "method": "POST",
+      "sortNum": 110000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"client_id\": \"service-nilai\",\n  \"client_secret\": \"<ISI SERVICE_NILAI_CLIENT_SECRET dari .env>\"\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        },
+        {
+          "type": "set-env-var",
+          "custom": "json.data.access_token",
+          "action": "setto",
+          "value": "{{token_service}}"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r12",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Andi - lihat nilai sendiri (200)",
+      "url": "http://127.0.0.1:3000/nilai",
+      "method": "GET",
+      "sortNum": 120000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_andi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r13",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Andi - nilai milik Citra (403)",
+      "url": "http://127.0.0.1:3000/nilai?nim=247006111002",
+      "method": "GET",
+      "sortNum": 130000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_andi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r14",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Andi - device tidak terdaftar (403)",
+      "url": "http://127.0.0.1:3000/nilai",
+      "method": "GET",
+      "sortNum": 140000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "HP-ORANG-LAIN"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_andi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r15",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Andi - tanpa X-Device-ID (403)",
+      "url": "http://127.0.0.1:3000/nilai",
+      "method": "GET",
+      "sortNum": 150000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_andi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r16",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Tanpa token (401)",
+      "url": "http://127.0.0.1:3000/nilai",
+      "method": "GET",
+      "sortNum": 160000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "401"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r17",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Budi - nilai kelas yang diampu (200)",
+      "url": "http://127.0.0.1:3000/nilai",
+      "method": "GET",
+      "sortNum": 170000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r18",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Budi - ubah nilai id 4 (IF301, kelasnya) (200)",
+      "url": "http://127.0.0.1:3000/nilai/4",
+      "method": "PUT",
+      "sortNum": 180000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nilai\": 91\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r19",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Budi - ubah nilai id 7 (kelas Sari) (403)",
+      "url": "http://127.0.0.1:3000/nilai/7",
+      "method": "PUT",
+      "sortNum": 190000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nilai\": 99\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r20",
+      "colId": "zt-collection",
+      "containerId": "zt-f2",
+      "name": "Andi - ubah nilai (403)",
+      "url": "http://127.0.0.1:3000/nilai/4",
+      "method": "PUT",
+      "sortNum": 200000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_andi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nilai\": 100\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r21",
+      "colId": "zt-collection",
+      "containerId": "zt-f3",
+      "name": "Budi - finalisasi kelas 2 / IF301 (200)",
+      "url": "http://127.0.0.1:3000/kelas/2/finalisasi",
+      "method": "POST",
+      "sortNum": 210000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r22",
+      "colId": "zt-collection",
+      "containerId": "zt-f3",
+      "name": "Budi - ubah nilai id 4 yang sudah final (409)",
+      "url": "http://127.0.0.1:3000/nilai/4",
+      "method": "PUT",
+      "sortNum": 220000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nilai\": 50\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "409"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r23",
+      "colId": "zt-collection",
+      "containerId": "zt-f3",
+      "name": "Budi - finalisasi kelas 3 / IF302 milik Sari (403)",
+      "url": "http://127.0.0.1:3000/kelas/3/finalisasi",
+      "method": "POST",
+      "sortNum": 230000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r24",
+      "colId": "zt-collection",
+      "containerId": "zt-f4",
+      "name": "Andi - transkrip sendiri (200)",
+      "url": "http://127.0.0.1:3000/transkrip/247006111001",
+      "method": "GET",
+      "sortNum": 240000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_andi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r25",
+      "colId": "zt-collection",
+      "containerId": "zt-f4",
+      "name": "Andi - transkrip Citra (403)",
+      "url": "http://127.0.0.1:3000/transkrip/247006111002",
+      "method": "GET",
+      "sortNum": 250000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-MHS-ANDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_andi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r26",
+      "colId": "zt-collection",
+      "containerId": "zt-f4",
+      "name": "Admin - transkrip Andi (200)",
+      "url": "http://127.0.0.1:3000/transkrip/247006111001",
+      "method": "GET",
+      "sortNum": 260000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-ADMIN-01"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_admin}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r27",
+      "colId": "zt-collection",
+      "containerId": "zt-f4",
+      "name": "Admin - transkrip Citra (200)",
+      "url": "http://127.0.0.1:3000/transkrip/247006111002",
+      "method": "GET",
+      "sortNum": 270000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-ADMIN-01"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_admin}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r28",
+      "colId": "zt-collection",
+      "containerId": "zt-f4",
+      "name": "Admin - transkrip Dewi (200)",
+      "url": "http://127.0.0.1:3000/transkrip/247006111003",
+      "method": "GET",
+      "sortNum": 280000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-ADMIN-01"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_admin}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r29",
+      "colId": "zt-collection",
+      "containerId": "zt-f4",
+      "name": "Budi - transkrip (403)",
+      "url": "http://127.0.0.1:3000/transkrip/247006111001",
+      "method": "GET",
+      "sortNum": 290000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r30",
+      "colId": "zt-collection",
+      "containerId": "zt-f5",
+      "name": "Token user (budi) sinkron (403)",
+      "url": "http://127.0.0.1:3000/transkrip/sinkron",
+      "method": "POST",
+      "sortNum": 300000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-DOSEN-BUDI"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_budi}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"kelas_id\": 1,\n  \"entries\": [\n    {\n      \"nim\": \"247006111001\",\n      \"nilai\": 88\n    },\n    {\n      \"nim\": \"247006111002\",\n      \"nilai\": 76\n    },\n    {\n      \"nim\": \"247006111003\",\n      \"nilai\": 92\n    }\n  ]\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r31",
+      "colId": "zt-collection",
+      "containerId": "zt-f5",
+      "name": "Token user (admin) sinkron (403)",
+      "url": "http://127.0.0.1:3000/transkrip/sinkron",
+      "method": "POST",
+      "sortNum": 310000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Device-ID",
+          "value": "DEV-ADMIN-01"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_admin}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"kelas_id\": 1,\n  \"entries\": [\n    {\n      \"nim\": \"247006111001\",\n      \"nilai\": 88\n    },\n    {\n      \"nim\": \"247006111002\",\n      \"nilai\": 76\n    },\n    {\n      \"nim\": \"247006111003\",\n      \"nilai\": 92\n    }\n  ]\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r32",
+      "colId": "zt-collection",
+      "containerId": "zt-f5",
+      "name": "Token service sinkron IF201 (200)",
+      "url": "http://127.0.0.1:3000/transkrip/sinkron",
+      "method": "POST",
+      "sortNum": 320000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_service}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"kelas_id\": 1,\n  \"entries\": [\n    {\n      \"nim\": \"247006111001\",\n      \"nilai\": 88\n    },\n    {\n      \"nim\": \"247006111002\",\n      \"nilai\": 76\n    },\n    {\n      \"nim\": \"247006111003\",\n      \"nilai\": 92\n    }\n  ]\n}",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r33",
+      "colId": "zt-collection",
+      "containerId": "zt-f6",
+      "name": "Service Nilai langsung, tanpa gateway secret (403)",
+      "url": "http://127.0.0.1:3001/nilai",
+      "method": "GET",
+      "sortNum": 330000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_admin}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r34",
+      "colId": "zt-collection",
+      "containerId": "zt-f6",
+      "name": "Service Transkrip langsung, tanpa gateway secret (403)",
+      "url": "http://127.0.0.1:3002/transkrip/247006111001",
+      "method": "GET",
+      "sortNum": 340000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token_admin}}"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "_id": "zt-r35",
+      "colId": "zt-collection",
+      "containerId": "zt-f6",
+      "name": "Service Transkrip langsung, secret ada tapi tanpa token (401)",
+      "url": "http://127.0.0.1:3002/transkrip/247006111001",
+      "method": "GET",
+      "sortNum": 350000,
+      "created": "2026-10-30T00:23:02.907Z",
+      "modified": "2026-10-30T00:23:02.907Z",
+      "headers": [
+        {
+          "name": "X-Gateway-Secret",
+          "value": "<ISI GATEWAY_SECRET dari .env>"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "none",
+        "raw": "",
+        "form": []
+      },
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "401"
+        }
+      ]
+    }
+  ]
+}

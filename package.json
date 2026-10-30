@@ -1,0 +1,28 @@
+{
+  "name": "zero-trust-nilai",
+  "version": "1.0.0",
+  "description": "Praktikum Zero Trust Security - API Gateway (PEP) + Policy Engine, Service Nilai, Service Transkrip",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "setup": "node scripts/setup-env.js",
+    "db:init": "node scripts/db-init.js",
+    "db:reset": "node scripts/db-reset.js",
+    "start:gateway": "node src/gateway/index.js",
+    "start:nilai": "node src/service-nilai/index.js",
+    "start:transkrip": "node src/service-transkrip/index.js",
+    "start:all": "node scripts/start-all.js",
+    "test": "node tests/run-tests.js",
+    "check": "node scripts/check-syntax.js",
+    "build:thunder": "node scripts/build-thunder.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.10.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
